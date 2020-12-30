@@ -23,7 +23,7 @@ const countScore = (clickedCell, clickedCellIndex) => {
 
 const printCurrentPlayerTurn = () => {
   currentPlayerSymbol = currentPlayerSymbol === 'X' ? 'O' : 'X';
-  gameStatus.innerHTML = `É a vez do ${currentPlayerSymbol}`;
+  gameStatus.innerHTML = `It's ${currentPlayerSymbol} turn`;
 };
 
 const validateGameResult = () => {
@@ -47,7 +47,7 @@ const validateGameResult = () => {
   }
 
   if (hasRoundFinished) {
-    gameStatus.innerHTML = `${currentPlayerSymbol} ganhou!`;
+    gameStatus.innerHTML = `${currentPlayerSymbol} wins!`;
     hasGameStarted = false;
 
     return;
@@ -75,7 +75,7 @@ const drawGame = () => {
   let isDrawGame = !gameState.includes('');
 
   if (isDrawGame) {
-    gameStatus.innerHTML = 'O jogo empatou!';
+    gameStatus.innerHTML = 'Draw game!';
     hasGameStarted = false;
 
     return;
@@ -90,10 +90,10 @@ const restartGame = () => {
   gameState = ['', '', '', '', '', '', '', '', ''];
 
   document.querySelectorAll('.cell').forEach((cell) => (cell.innerHTML = ''));
-  gameStatus.innerHTML = `É a vez do ${currentPlayerSymbol}`;
+  gameStatus.innerHTML = `It's ${currentPlayerSymbol} turn`;
 };
 
-gameStatus.innerHTML = `É a vez do ${currentPlayerSymbol}`;
+gameStatus.innerHTML = `It's ${currentPlayerSymbol} turn`;
 
 document
   .querySelectorAll('.cell')
